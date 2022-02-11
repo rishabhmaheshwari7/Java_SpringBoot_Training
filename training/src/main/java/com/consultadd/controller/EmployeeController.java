@@ -5,6 +5,7 @@ import com.consultadd.repository.EmployeeRepository;
 import com.consultadd.sevice.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +30,11 @@ public class EmployeeController {
     @PutMapping("/updateemp")
     public String update(@RequestBody Employee employee){
         return employeeService.updateEmployee(employee);
+    }
+
+    @GetMapping("/employee/{city}")
+    public ResponseEntity findEmployeeByCity(@PathVariable("city") String city){
+        return ResponseEntity.ok(employeeService.findAllByCity(city));
     }
 
     @DeleteMapping("/deleteemp")

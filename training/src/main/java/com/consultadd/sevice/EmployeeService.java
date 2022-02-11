@@ -49,5 +49,9 @@ public class EmployeeService {
     }
 
 
+    public List<Employee> findAllByCity(String city){
+        return employeeRepository.findAllByCity(city);
+    }
+
 
 }
