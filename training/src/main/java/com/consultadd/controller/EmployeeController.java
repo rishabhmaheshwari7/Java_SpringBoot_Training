@@ -25,6 +25,16 @@ public class EmployeeController {
     public String saveEmployee(@RequestBody Employee employee){
         return employeeService.saveEmployee(employee);
     }
+    
+        @PostMapping("/addemptodb")
+    public String saveEmployee(@RequestBody Db db){
+        return employeeService.saveEmployee(db);
+    }
+    
+        @PostMapping("/addquestion")
+    public String saveEmployee(@RequestBody Question question){
+        return employeeService.saveEmployee(question);
+    }
 
     @PutMapping("/updateemp")
     public String update(@RequestBody Employee employee){
